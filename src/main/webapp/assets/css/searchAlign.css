@@ -1,0 +1,210 @@
+.searchContainer{
+	margin:10px 0px 10px 0px;
+	}
+
+.searchBoxes{
+	display:inline;
+	margin:10px;
+}
+
+#postDetailstbl th,td{
+        width:200px;
+        height:10px;
+     }
+     
+ .footer-contentDash{
+    position: absolute;
+    left: 200px;
+    right: 12px;
+    bottom: 4px;
+    padding: 8px;
+    line-height: 36px;
+    border-top: 3px double #E5E5E5;
+ }
+ 
+ .pull-rightLogo{
+	 float: right!important;
+	 margin:2px 40px 2px 2px;
+}
+#Error{
+	color:red;
+}
+#Error1{
+	color:red;
+}
+#Error2{
+	color:red;
+}
+#Error3{
+	color:red;
+}
+#Error4{
+	color:red;
+}
+#Error5{
+	color:red;
+}
+#Error6{
+	color:red;
+}
+#Error7{
+	color:red;
+}
+#Error8{
+	color:red;
+}
+.btn.btn-app.btn-sm1{
+	width: 300px;
+    font-size: 16px;
+    border-radius: 10px;
+    line-height: 1.5;
+    margin-top:25px;
+}
+.tooltiptext {
+    visibility: hidden;
+    width: 140px;
+    min-height:50px;
+    background-color:#fff;
+    color: #4D5C73;
+    text-align: center;
+    border-radius: 3px;
+    font-size:15px;
+    border-color: #ccc;
+    border-width: 1px;
+    box-shadow: 0 0 4px 2px rgba(0,0,0,.2);
+    position: absolute;
+    z-index: 1;
+    top: 10px;
+    left: 105%;
+    transition: opacity .2s linear 0s,visibility 0s linear .2s,max-height 0s linear .2s,max-width 0s linear .2s,min-width 0s linear .2s;
+}
+
+.tooltiptextReccom{
+	visibility: hidden;
+    width: 140px;
+    min-height:50px;
+    background-color:#fff;
+    color: #4D5C73;
+    text-align: center;
+    border-radius: 3px;
+    font-size:15px;
+    border-color: #ccc;
+    border-width: 1px;
+    box-shadow: 0 0 4px 2px rgba(0,0,0,.2);
+    position: absolute;
+    z-index: 1;
+    top: 120%;
+    left: 15%;
+    transition: opacity .2s linear 0s,visibility 0s linear .2s,max-height 0s linear .2s,max-width 0s linear .2s,min-width 0s linear .2s;
+}
+.tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 36%;
+    left: -19px;
+    border-width: 9px;
+    border-style: solid;
+    border-color:  transparent #ccc transparent transparent;
+
+    
+}
+.tooltiptextReccom::after{
+	content: "";
+    position: absolute;
+    top: -37%;
+    left: 55px;
+    border-width: 9px;
+    border-style: solid;
+    border-color:  transparent  transparent #ccc transparent;
+}
+.btn.btn-app.btn-sm1:hover .tooltiptext {
+    visibility: visible;
+}
+.btn.btn-app.btn-sm:hover .tooltiptextReccom {
+    visibility: visible;
+}
+
+.widgetbox{
+	padding: 0;
+    box-shadow: none;
+    margin: 1% auto;
+    border: 1px solid #CCC;
+    min-height:205px
+}
+
+a.export,
+a.export:visited
+.exportlinks {
+display: inline-block;
+text-decoration: none;
+color: #783;
+background-color: #ddd;
+border: 1px solid #ccc;
+padding: 8px;
+}
+
+.dateInfos{
+	float:right;
+}
+.tooltiptextComments{
+	visibility: hidden;
+    width:140px;
+    min-height:50px;
+    background-color:#fff;
+    color: #4D5C73;
+    text-align: center;
+    border-radius: 3px;
+    font-size:15px;
+    border-color: #ccc;
+    border-width: 1px;
+    box-shadow: 0 0 4px 2px rgba(0,0,0,.2);
+    position: absolute;
+    z-index: 1;
+    margin-top: -20px;
+    margin-left: 30px;
+    transition: opacity .2s linear 0s,visibility 0s linear .2s,max-height 0s linear .2s,max-width 0s linear .2s,min-width 0s linear .2s;
+}
+/* .tooltiptextComments::after { */
+/*     content: ""; */
+/*     position: absolute; */
+/*     top: 36%; */
+/*     left: -19px; */
+/*     border-width: 9px; */
+/*     border-style: solid; */
+/*     border-color:  transparent #ccc transparent transparent; */
+
+    
+/* } */
+.dateInfos:hover .tooltiptextComments{
+    visibility: visible;
+}
+
+.modelButton{
+	border-width: 1px;
+    border-color: #d4dfe3;
+    background-color: #FAFAFA;
+    margin: 0 -1px 0 0;
+    position: relative;
+    z-index: auto;
+    border-radius: 0!important;  
+    display: inline-block;
+    padding: 5px 14px;
+    border: 1px solid #ddd;
+    height: 33px;
+    margin-left: 10px;
+	
+}
+
+.modelButton:hover {
+    text-decoration: none;
+}
+.modelButton:focus{
+	 outline: none;
+}
+.freeze{
+	 pointer-events:none;
+      cursor: default;
+}
+#nonEdit{
+pointer-events: none; 
+}

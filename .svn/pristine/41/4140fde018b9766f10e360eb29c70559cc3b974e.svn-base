@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xmlns:tx="http://www.springframework.org/schema/tx"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+      http://www.springframework.org/schema/beans/spring-beans.xsd
+      http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+	  http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
+
+<bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+        <property name="dataSource">
+    		<ref bean="dataSource"/>
+    	</property>
+    	<property name="hibernateProperties">		
+    		<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+				<prop key="hibernate.show_sql">false</prop>
+				<prop key="hibernate.connection.pool_size">10</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+				<prop key="org.hibernate.envers.audit_table_suffix">history</prop>
+				<prop key="hibernate.connection.zeroDateTimeBehavior">convertToNull</prop>
+				<prop key="hibernate.jdbc.batch_size">30</prop>
+				<prop key="hibernate.order_inserts">true</prop>
+				<prop key="hibernate.order_updates">true</prop>
+				<prop key="hibernate.jdbc.batch_versioned_data">true</prop>
+				
+    		</props>
+    	</property>
+    	<property name="annotatedClasses">
+    	 <list>
+    	 <value>in.hkcl.model.Person</value>
+    	  <value>in.hkcl.model.ReadExcel</value>
+    	  <value>in.hkcl.model.Advertisement</value>
+				<value>in.hkcl.model.Department</value>
+				<value>in.hkcl.model.Police</value>
+				<value>in.hkcl.model.Category</value>
+				<value>in.hkcl.model.UserLogin</value>
+				<value>in.hkcl.model.PasswordResetToken</value>
+				<value>in.hkcl.model.OnRegistrationCompleteEvent</value>
+				<value>in.hkcl.model.AdvertisementPosted</value>
+				<value>in.hkcl.model.AdmitCards</value>
+				<value>in.hkcl.model.AdmitCardsForInterview</value>
+				<value>in.hkcl.model.AnnouncementOfResults</value>
+				<value>in.hkcl.model.ApplicationClosed</value>
+				<value>in.hkcl.model.ApplicationOpen</value>
+				<value>in.hkcl.model.InterviewEndDate</value>
+				<value>in.hkcl.model.InterviewStartDate</value>
+				<value>in.hkcl.model.ObjectionsClosed</value>
+				<value>in.hkcl.model.ObjectionsOpen</value>
+				<value>in.hkcl.model.OnRegistrationCompleteEvent</value>
+				<value>in.hkcl.model.PMTHeightChest</value>
+				<value>in.hkcl.model.PstEnd</value>
+				<value>in.hkcl.model.PstStart</value>
+				<value>in.hkcl.model.RecommendedDate</value>
+				<value>in.hkcl.model.ResultOfPmtHeightChest</value>
+				<value>in.hkcl.model.ResultOfPst</value>
+				<value>in.hkcl.model.ResultOfWrittenExam</value>
+				<value>in.hkcl.model.ScrutinyEndDate</value>
+				<value>in.hkcl.model.ScrutinyResults</value>
+				<value>in.hkcl.model.ScrutinyStartDate</value>
+				<value>in.hkcl.model.UploadedRevisedAnswerKey</value>
+				<value>in.hkcl.model.UploadingAnswerKey</value>
+				<value>in.hkcl.model.WrittenExam</value>
+				<value>in.hkcl.model.CourtCaseDetails</value>
+				<value>in.hkcl.model.PetitionerDetails</value>
+				<value>in.hkcl.model.HearingDetails</value>
+    	 </list>
+    	</property>
+</bean>
+<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+	    <property name="driverClass" value="com.mysql.jdbc.Driver"/> 
+	    <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/hssc?useEncoding=true&amp;characterEncoding=UTF-8&amp;zeroDateTimeBehavior=convertToNull"/> 
+	    <property name="user" value="root"/> 
+	    <property name="password" value=""/> 	
+    <property name="acquireIncrement" value="50" />
+    <property name="acquireRetryAttempts" value="3"/>
+    <property name="acquireRetryDelay" value="300" />
+    <property name="initialPoolSize" value="50" />
+    <property name="maxPoolSize" value="50" /> 
+    <property name="minPoolSize" value="10" />
+	<property name="idleConnectionTestPeriod" value="100"/>
+    <!-- <property name="maxStatements" value="2000" /> -->
+    	         
+	</bean>
+</beans>

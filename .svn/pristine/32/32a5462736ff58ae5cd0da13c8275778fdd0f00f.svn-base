@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/mvc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:beans="http://www.springframework.org/schema/beans"
+	 xmlns:util="http://www.springframework.org/schema/util"
+	 xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context"
+	  xmlns:aop="http://www.springframework.org/schema/aop"
+      xmlns:tx="http://www.springframework.org/schema/tx"
+      xmlns:p="http://www.springframework.org/schema/p"
+      xmlns:task="http://www.springframework.org/schema/task"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+		http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache.xsd
+		http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd
+		http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd">
+
+	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
+	
+	<!-- Enables the Spring MVC @Controller programming model -->
+		<mvc:annotation-driven/>
+		
+		<task:annotation-driven/>
+	
+       <mvc:default-servlet-handler/>
+       
+       <mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/*"/>
+			<beans:bean class="in.hkcl.Interceptors.AuthorizationInterceptor" ></beans:bean>
+		</mvc:interceptor>
+ </mvc:interceptors>
+  
+	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
+	<resources mapping="/resources/**" location="/resources/" />
+	
+	<!-- Database Configuration -->
+	<beans:import resource="data-source.xml"/>
+
+	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
+	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<beans:property name="prefix" value="/WEB-INF/views/" />
+		<beans:property name="suffix" value=".jsp" />
+	</beans:bean>
+	
+	<beans:bean name="jsonTemplate" class="org.springframework.web.servlet.view.json.MappingJackson2JsonView"/>
+	
+	<beans:bean id="transactionManager"
+        class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+        <beans:property name="sessionFactory" ref="sessionFactory" />
+    </beans:bean>
+    
+    <tx:annotation-driven transaction-manager="transactionManager" />
+    
+
+    <beans:bean class="in.hkcl.smsIntegration.SmsSender" ></beans:bean>
+   <beans:bean id="PersonDao" class="in.hkcl.dao.RequisitionDAOImpl"></beans:bean>
+   <beans:bean id="baseDataDao" class="in.hkcl.dao.BaseDataDaoImpl"></beans:bean>
+   <beans:bean id="courtCaseDao" class="in.hkcl.dao.CourtCaseDaoImpl"></beans:bean>
+    <beans:bean id="schedularService" class="in.hkcl.service.SchedularService"></beans:bean>
+	
+	<context:component-scan base-package="in.hkcl"/>
+	
+	<beans:bean id="multipartResolver"
+	class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+	<!-- maxUploadSize=10MB -->
+	<beans:property name="maxUploadSize" value="10240000"/>
+	</beans:bean>
+	
+	<beans:bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+		<beans:property name="host" value="smtp.gmail.com" />
+		<beans:property name="port" value="465" />
+		<beans:property name="username" value="hssc.mis@gmail.com" />
+		<beans:property name="password" value="hsscmis*#123" />
+		<beans:property name="defaultEncoding" value="UTF-8" />
+		<beans:property name="javaMailProperties">
+			<beans:props>			   
+			    <beans:prop key="mail.smtp.ssl.trust">smtp.gmail.com</beans:prop>
+				<beans:prop key="mail.smtp.auth">true</beans:prop>
+				<beans:prop key="mail.smtp.socketFactory.class">javax.net.ssl.SSLSocketFactory</beans:prop>
+				<beans:prop key="mail.smtp.socketFactory.port">465</beans:prop>
+				<beans:prop key="mail.debug">true</beans:prop>
+<!-- 				<prop key="mail.smtp.starttls.enable">true</prop> -->
+				<beans:prop key="mail.smtp.ssl.enable">true</beans:prop>
+			</beans:props>
+		</beans:property>
+	</beans:bean>    	
+	
+</beans:beans>

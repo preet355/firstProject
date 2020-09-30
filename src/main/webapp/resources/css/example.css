@@ -1,0 +1,306 @@
+
+.innercontainer{
+	margin:1% auto;
+	min-height:470px;
+	width:1250px;
+	background-color:white;
+	box-shadow: 1px 3px 8px rgba(0,0,0,.2);
+}
+form {
+	width:1250px;
+}
+/* .searchcontainer { */
+        
+/*     text-align: left; */
+/*     margin: 15px 10px 15px 10px; */
+/* } */
+
+.innerleft{
+	width:850px;
+	float:left;
+}
+.innerRight{
+	margin-left:18px;
+	margin-top:18px;
+	float:left;
+	width:360px;
+	height:340px;
+	border: 1px solid #cccccc;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+.clear{
+	clear:both;
+}
+.labelname{
+   display:block;
+   padding-top:15px;
+   font-size:20px;
+   text-align:center;
+   background-color: #ddd;
+   font-family: Trebuchet MS;
+   border-bottom:1px solid #cccccc;
+}   
+.Labelname2{
+	display:block;
+	padding-top:15px;
+	padding-left:10px;
+	font-size:20px;
+	
+}
+
+.departmentTable{
+	width:800px;
+    margin:20px;
+    border:1px solid #cccccc; 
+    font-family: Trebuchet MS; 
+    font-size: 1.1em;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+        }
+.departmentTable th,td{
+        padding: 2px 4px 2px 4px !important;
+        text-align: left;
+        vertical-align: top;
+}        
+.departmentTable thead tr{ 
+background-color: #ddd;
+}
+/* .departmentTable th.sorted{ */
+/*         background-color: orange; */
+/* } */
+
+.departmentTable tr.odd {
+        background-color: #fff;
+}
+
+.departmentTable tr.tableRowEven,tr.even {
+        background-color:#f9f9f9;
+}
+.col-xs-4{
+        display:inline;
+        font-family: Trebuchet MS;
+        font-size: 1.1em;
+        padding-left:30px;
+        padding-right:100px;
+}
+.pagebanner
+{
+	    display:inline;
+        margin-left:10px;
+        font-family: Trebuchet MS;
+        font-size: 1.1em;
+        padding:100px;   
+}
+.hr-search{
+	float:left;
+	display:block;
+	margin-left:10px;
+	margin-bottom:10px;
+    padding: 0px 10px 0px 10px;
+    height:30px;
+    font-size: 1.1em;
+    font-family: Trebuchet MS;
+    border:1px solid #2e6da4;
+    border-radius:3px;
+    line-height: 24px;
+    background:#337ab7;
+    color: #fff;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+	
+}
+#myinput{
+	display: block;
+    width: 94%;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    padding-left:100px;
+    height: 31px;
+    font-size: 1.0em;
+    font-family: Trebuchet MS;
+    background-color: #fafafa;
+    border-radius: 2px;
+    line-height: 1.42857143;
+    color: #555555;
+    background-color: #ffffff;
+    background-image: none;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+.hr-add{
+	width:300px;
+	font-family: Trebuchet MS;
+	border:1px solid #2e6da4;
+	border-radius:3px;
+	margin:30px;
+	padding:10px;
+	font-size:1.2em;
+	line-height: 24px;
+	background:#337ab7;
+	color: #fff;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+}
+.topheading{
+   display:block;
+   margin-left:10px;
+   margin-right:10px;
+   border-bottom:1px solid #DDD;
+   font-size:22px;
+/*    text-transform: uppercase; */
+   font-family: Trebuchet MS;
+}
+/* **************************************** Login in ******************************************* */
+
+.wrapper{
+	margin: 1% auto;
+    background-color: white;
+    max-width:750px;
+    height:350px;
+    border: 1px solid rgba(0,0,0,0.1);
+}
+.signin-wrapper{
+	margin: 1% auto;
+	width:535px;
+}
+.login-heading{
+   font-size:24px;
+   font-family: Trebuchet MS;
+   padding: 40px 0 0 0;
+}
+.signin-input{
+    display: block;
+    margin-bottom: 15px;
+}
+.signin-inputEdit{
+    width: 97%;
+    max-width: 280px;
+    margin-right: 10px;
+    padding: 4px;
+    font-family: Trebuchet MS;
+    background-color: #fff;
+    border: 1px solid #e6ecf0;
+    border-radius: 3px;
+}
+.signin-button{
+	display:block;
+}
+.sigin-buttonedit{
+	background-color: #337ab7;
+    border: 1px solid #337ab7;
+    color: #fff;
+    font-size: 1.2em;
+    font-family: Trebuchet MS;
+    border-radius:2px;
+}
+.wrapper-lower{
+	margin: 1% auto;
+	width:535px;
+	background-color: #f5f8fa;
+	
+}
+.signup{
+	font-family: Trebuchet MS;
+	padding:5px 10px 5px 10px;
+}
+.Error{
+	font-family: Trebuchet MS;
+	color:green;
+	font-size: 1.1em;
+}
+.Error1{
+	font-family: Trebuchet MS;
+	color:red;
+	font-size: 1.1em;
+}
+
+.wrapper1{
+	margin: 1% auto;
+    background-color: white;
+    max-width:750px;
+    min-height:500px;
+    border: 1px solid rgba(0,0,0,0.1);
+}
+.login-heading1{
+   font-size:28px;
+   font-weight: bold;
+   font-family: Trebuchet MS;
+   padding: 40px 0 0 0;
+   text-align:center;
+}
+.signin-input1{
+	display: block;
+    margin-bottom: 15px;
+    margin-left:100px;
+}
+.signin-inputEdit1{
+    width: 97%;
+    max-width: 350px;
+    height:45px;
+    margin-right: 10px;
+    padding: 4px;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: Trebuchet MS;
+    background-color: #fff;
+    border: 1px solid #e6ecf0;
+    border-radius: 3px;
+}
+.signin-button1{
+	display:block;
+}
+.sigin-buttonedit1{
+	
+	width: 350px;
+	margin-left: 100px;
+    background-color: #337ab7;
+    border: 1px solid #337ab7;
+    color: #fff;
+    font-family: Trebuchet MS;
+    font-size: 18px;
+    line-height: 24px;
+    padding: 12px 20px;
+    border-radius: 100px;
+}
+input::placeholder {
+  color: #e6ecf0;
+}
+
+.Error2{
+	font-family: Trebuchet MS;
+	color:green;
+	font-size: 1.1em;
+	margin-left:120px;
+}
+.Error3{
+	font-family: Trebuchet MS;
+	color:red;
+	font-size: 1.1em;
+	margin-left:120px;
+}
+.wrapper3{
+	margin: 1% auto;
+    background-color: white;
+    max-width:1000px;
+    height:550px;
+    border: 1px solid rgba(0,0,0,0.1);
+}
+#googleMap {
+      width:1000px; ;
+      height: 300px;
+      -webkit-filter: grayscale(100%);
+/*       filter: grayscale(100%); */
+  } 
+ .info{
+    font-family: Trebuchet MS;
+	font-size: 1.1em;
+ }
+ .copyright{
+    text-align:center;
+    font-family: Trebuchet MS;
+	font-size: 1.3em;
+ }

@@ -1,0 +1,248 @@
+	package in.hkcl.model;
+
+import java.io.Serializable;
+import java.util.Date;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+import javax.persistence.Transient;
+
+import in.hkcl.login.validation.CustomAnnotationEmail;
+import in.hkcl.login.validation.CustomAnnotationPassword;
+
+@Entity
+@Table(name = "userlogin")
+@CustomAnnotationPassword
+public class UserLogin implements Serializable{
+
+	private static final long serialVersionUID = 1L;
+	
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "userId", unique = true, nullable = false)
+	private Integer userId;
+	
+	@Column(name="idDept")
+	private Integer idDept;
+	
+	@Column(name="candidateName")
+	private String candidateName;
+	
+	@Column(name="DOB")
+	private String dob;
+	
+	@CustomAnnotationEmail
+	@Column(name="email")
+	private String email;
+
+	@Column(name="passwordCreatedOn")
+	private Date passwordCreatedOn;
+	
+	@Column(name="passwordExpireOn")
+	private Date passwordExpireOn;
+	
+	@Column(name="phoneNumber")
+	private String phoneNumber;
+	
+	
+	@Column(name="userName")
+	private String userName;
+	
+	
+	@Column(name="userPassword")
+	private String userPassword;
+	
+    
+	@Column(name="isAdmin")
+	private String isAdmin="N";
+	
+	@Column(name = "enabled")
+    private boolean enabled;
+	
+	@Column(name="module")
+	 private String module;
+	
+	@Column(name="idRole")
+	private Integer idRole;
+	
+	@Column(name="old_dept")
+	private Integer oldDept;
+	
+	 
+	 @Transient
+	 private String oldPassword;
+
+     @Transient
+	 private String token;
+     
+     @Transient
+     private boolean hasSpe;
+     
+	 
+
+	public Integer getUserId() {
+		return userId;
+	}
+
+	public void setUserId(Integer userId) {
+		this.userId = userId;
+	}
+
+	public String getCandidateName() {
+		return candidateName;
+	}
+
+	public void setCandidateName(String candidateName) {
+		this.candidateName = candidateName;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+	
+	public String getUserPassword() {
+		return userPassword;
+	}
+    
+	public void setUserPassword(String userPassword) {
+		this.userPassword = userPassword;
+	}
+
+
+	public String getIsAdmin() {
+		return isAdmin;
+	}
+
+	public void setIsAdmin(String isAdmin) {
+		this.isAdmin = isAdmin;
+	}
+
+	public boolean isEnabled() {
+		return enabled;
+	}
+
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
+	}
+
+	public String getToken() {
+		return token;
+	}
+
+	public void setToken(String token) {
+		this.token = token;
+	}
+
+	public String getOldPassword() {
+		return oldPassword;
+	}
+
+	public void setOldPassword(String oldPassword) {
+		this.oldPassword = oldPassword;
+	}
+
+	public Integer getIdDept() {
+		return idDept;
+	}
+
+	public void setIdDept(Integer idDept) {
+		this.idDept = idDept;
+	}
+
+	public String getModule() {
+		return module;
+	}
+
+	public void setModule(String module) {
+		this.module = module;
+	}
+
+	public Integer getIdRole() {
+		return idRole;
+	}
+
+	public void setIdRole(Integer idRole) {
+		this.idRole = idRole;
+	}
+
+	/*public List<UserEditLogs> getUserEditLogList() {
+		return userEditLogList;
+	}
+
+	public void setUserEditLogList(List<UserEditLogs> userEditLogList) {
+		this.userEditLogList = userEditLogList;
+	}*/
+
+	public Date getPasswordCreatedOn() {
+		return passwordCreatedOn;
+	}
+
+	public void setPasswordCreatedOn(Date passwordCreatedOn) {
+		this.passwordCreatedOn = passwordCreatedOn;
+	}
+
+	public Date getPasswordExpireOn() {
+		return passwordExpireOn;
+	}
+
+	public void setPasswordExpireOn(Date passwordExpireOn) {
+		this.passwordExpireOn = passwordExpireOn;
+	}
+
+	public String getPhoneNumber() {
+		return phoneNumber;
+	}
+
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+
+	public Integer getOldDept() {
+		return oldDept;
+	}
+
+	public void setOldDept(Integer oldDept) {
+		this.oldDept = oldDept;
+	}
+
+	public String getDob() {
+		return dob;
+	}
+
+	public void setDob(String dob) {
+		this.dob = dob;
+	}
+
+
+	public boolean isHasSpe() {
+		return hasSpe;
+	}
+
+	public void setHasSpe(boolean hasSpe) {
+		this.hasSpe = hasSpe;
+	}
+
+	 
+	
+	
+}
